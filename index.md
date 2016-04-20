@@ -63,14 +63,16 @@ layout: post
 							<div class="card-block card-code">
 {% highlight sql %}
 // CONFIGURE & MAP entity
-DapperPlusManager.Entity<Order>().Table("Orders").Identity(x => x.ID);
+DapperPlusManager.Entity<Order>()
+                 .Table("Orders")
+                 .Identity(x => x.ID);
 
 // CHAIN & SAVE entity
 connection.BulkInsert(orders)
           .AlsoInsert(order => order.Items);
-          .Include(order => order.ThenMerge(order => order.Invoice)
+          .Include(x => x.ThenMerge(order => order.Invoice)
                                  .AsloMerge(invoice => invoice.Items))
-          .AlsoMerge(order => order.ShippingAddress);   
+          .AlsoMerge(x => x.ShippingAddress);   
 {% endhighlight %}	
 							</div>
 						</div>
