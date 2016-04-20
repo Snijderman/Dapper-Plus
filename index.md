@@ -540,18 +540,18 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 	  
 	  function selectProduct() {
 		if($("#provider_type").val() == "VXEBFHKXL56NE") {
-			$("#seat1").html("Bulk Operations $799 (1 seat)");
-			$("#seat2_4").html("Bulk Operations $999 (2-4 seats)");
-			$("#seat5_9").html("Bulk Operations $1199 (5-9 seats)");
-			$("#seat10_14").html("Bulk Operations $1399 (10-14 seats)");
-			$("#seat15_19").html("Bulk Operations $1599 (15-19 seats)");
+			$("#seat1").html("Dapper Plus $799 (1 seat)");
+			$("#seat2_4").html("Dapper Plus $999 (2-4 seats)");
+			$("#seat5_9").html("Dapper Plus $1199 (5-9 seats)");
+			$("#seat10_14").html("Dapper Plus $1399 (10-14 seats)");
+			$("#seat15_19").html("Dapper Plus $1599 (15-19 seats)");
 		}
 		else {
-			$("#seat1").html("Bulk Operations $599 (1 seat)");
-			$("#seat2_4").html("Bulk Operations $799 (2-4 seats)");
-			$("#seat5_9").html("Bulk Operations $999 (5-9 seats)");
-			$("#seat10_14").html("Bulk Operations $1199 (10-14 seats)");
-			$("#seat15_19").html("Bulk Operations $1399 (15-19 seats)");
+			$("#seat1").html("Dapper Plus $599 (1 seat)");
+			$("#seat2_4").html("Dapper Plus $799 (2-4 seats)");
+			$("#seat5_9").html("Dapper Plus $999 (5-9 seats)");
+			$("#seat10_14").html("Dapper Plus $1199 (10-14 seats)");
+			$("#seat15_19").html("Dapper Plus $1399 (15-19 seats)");
 		}
 	  }
 	  
