@@ -62,20 +62,15 @@ layout: post
 						<div class="card">
 							<div class="card-block card-code">
 {% highlight sql %}
--- Evaluate dynamically expression in T-SQL
-DECLARE @tableFormula TABLE (
-   Formula VARCHAR(255), X INT, Y INT, Z INT
-)
+// CONFIGURE & MAP entity
+DapperPlusManager.Entity<Order>().Table("Orders").Identity(x => x.ID);
 
-INSERT  INTO @tableFormula VALUES ('x+y*z', 1, 2, 3 ), 
-                                  ('(x+y)*z', 1, 2, 3 )
--- SELECT 7
--- SELECT 9
-SELECT SQLNET::New(Formula)
-              .ValueInt('x', X)
-              .ValueInt('y', Y)
-              .ValueInt('z', Z).EvalInt()
-FROM @tableFormula
+// CHAIN & SAVE entity
+connection.BulkInsert(orders)
+          .AlsoInsert(order => order.Items);
+          .Include(order => order.ThenMerge(order => order.Invoice)
+                                 .AsloMerge(invoice => invoice.Items))
+          .AlsoMerge(order => order.ShippingAddress);   
 {% endhighlight %}	
 							</div>
 						</div>
@@ -88,43 +83,61 @@ FROM @tableFormula
 		<div id="featured">
 			<div class="container">
 			
-				<!-- SQL Eval Function like JavaScript !-->
-				<h2>SQL Eval Function like JavaScript</h2>
+				<!-- Improve Performance !-->
+				<h2>High Performance Operations</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="featured-tagline">Avoid using slow user-defined function (UDF) and table-valued function (TVF) and dramatically improve query performance with Eval SQL.NET.</p>
+						<p class="featured-tagline">Use <span class="text-bold-red">scalable</span> bulk operations (Bulk Insert, Update, Delete and Merge) and always get the best <span class="text-bold-red">performance</span> available for your database provider.</p>
 						<ul class="featured-list-sm">
-							<li>Execute SQL <span class="text-bold-red">3-20x faster</span> than UDF and TVF</li>
-							<li>Evaluate an expression more than <span class="text-bold-red">ONE MILLION</span> times under a second</li>
-							<li>Evaluate expression using C# Syntax</li>
-						</ul>
+							<li>SQL Server 2008+</li>
+							<li>SQL Azure</li>
+							<li>SQL Compact</li>
+							<li>MySQL</li>
+							<li>SQLite</li>
+							<li>PostgreSQL <i>(Coming soon)</i></li>
+							<li>Oracle <i>(Coming soon)</i></li>
+						</ul>	
 					</div>
 					<div class="col-lg-7">
-						<table class="table table-striped table-hover" style="background-color: white;">
+						<table class="table table-striped table-hover">
 							<tr class="thead-inverse">
-								<th>Methods</th>
+								<th>Operations</th>
 								<th>1,000 Rows</th>
 								<th>10,000 Rows</th>
 								<th>100,000 Rows</th>
 								<th>1,000,000 Rows</th>
 							</tr>
 							<tr>
-								<th>Eval SQL.NET</th>
-								<td>4 ms</td>
-								<td>13 ms</td>
-								<td>160 ms</td>
-								<td>1,650 ms</td>
+								<th>Insert</th>
+								<td>6 ms</td>
+								<td>25 ms</td>
+								<td>200 ms</td>
+								<td>2,000 ms</td>
 							</tr>
 							<tr>
-								<th>fn_split (TVF)</th>
-								<td>100 ms</td>
+								<th>Update</th>
+								<td>50 ms</td>
+								<td>80 ms</td>
+								<td>575 ms</td>
+								<td>6,500 ms</td>
+							</tr>
+							<tr>
+								<th>Delete</th>
+								<td>45 ms</td>
+								<td>70 ms</td>
 								<td>625 ms</td>
-								<td>5,500 ms</td>
-								<td>55,000 ms</td>
+								<td>6,800 ms</td>
+							</tr>
+							<tr>
+								<th>Merge</th>
+								<td>65 ms</td>
+								<td>160 ms</td>
+								<td>1,200 ms</td>
+								<td>12,000 ms</td>
 							</tr>
 						</table>
 						
-						<p>* Benchmark to split a text with a delimiter</p>
+						<p class="text-muted">* Benchmark for SQL Server</p>
 					</div>
 				</div>
 			</div>
@@ -145,133 +158,93 @@ FROM @tableFormula
 		<!-- features !-->
 		<div id="feature">
 			<div class="container">
-				<!-- Evaluate dynamic arithmetic/math expression in SQL!-->
-				<a id="evaluate-dynamic-arithmetic-math-expression-in-sql" href="#"></a>
-				<h2>Evaluate dynamic arithmetic/math expression in SQL</h2>
+
+				<a id="mapper" href="#"></a>
+				<h2>Mapper</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="feature-tagline">Make the impossible now possible. Evaluate C# expression in SQL to overcome limitations.</p>
-						<ul>
-							<li>Allow trusted users to create report field and filter</li>
-							<li>Consume Web Service</li>
-							<li>Replace text in template with String Interpolation</li>
-						</ul>
+						<p class="feature-tagline">Dapper Plus Mapper allow to map the conceptual model (Entity) with the storage model (Database) and configure options to perform Bulk Actions.</p>
 					</div>
 					<div class="col-lg-7">
 {% highlight sql %}
--- CREATE test
-DECLARE @table TABLE ( X INT, Y INT, Z INT )
-INSERT  INTO @table VALUES  ( 2, 4, 6 ),  ( 3, 5, 7 ), ( 4, 6, 8 )
-
--- Result: 14, 22, 32
-DECLARE @sqlnet SQLNET = SQLNET::New('x*y+z')
-SELECT  @sqlnet.ValueInt('x', X)
-               .ValueInt('y', Y)
-               .ValueInt('z', Z)
-               .EvalInt()
-FROM    @table
+DapperPlusManager.Entity<Order>().Table("Orders")
+                                 .Identity(x => x.ID)
+                                 .BatchSize(200);
 {% endhighlight %}
 					</div>
 				</div>
 
 				<hr class="m-y-md" />
 				
-				<!-- Split text with delimiter !-->
-				<a id="split-text-with-delimiter" href="#"></a>
-				<h2>Split text with delimiter</h2>
+				<a id="bulk_actions" href="#"></a>
+				<h2>Bulk Actions</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="feature-tagline">Improve <span class="text-bold-red">performance</span> and <span class="text-bold-red">capability</span> for splitting text with an easy to use split function and LINQ expressions.</p>
-						<ul>
-							<li>Split text with multiple delimiters</li>
-							<li>Split text using a regular expression</li>
-							<li>Include row index</li>
-						</ul>
+						<p class="feature-tagline">Bulk Actions allow to perform a bulk insert, update, delete or merge and include related child items.</p>
 					</div>
 					<div class="col-lg-7">
 {% highlight sql %}
--- CREATE test
-DECLARE @t TABLE (Id INT , Input VARCHAR(MAX))
-INSERT  INTO @t VALUES  ( 1, '1, 2, 3; 4; 5' ), ( 2, '6;7,8;9,10' )
-
--- SPLIT with many delimiters: ',' and ';'
-DECLARE @sqlnet SQLNET = SQLNET::New('Regex.Split(input, ",|;")')
-
-SELECT  *
-FROM    @t AS A
-        CROSS APPLY ( SELECT    *
-                      FROM      dbo.SQLNET_EvalTVF_1(@sqlnet.ValueString('input', Input))
-                    ) AS B
-{% endhighlight %}	
+connection.BulkInsert(orders, order => order.Items)
+          .BulkInsert(invoices, invoice => invoice.Items)
+          .BulkMerge(shippingAddresses);
+{% endhighlight %}
 					</div>
 				</div>
 
 				<hr class="m-y-md" />
 				
-				<!-- Use regular expression in SQL Server !-->
-				<a id="use-regular-expression-in-sql-server" href="#"></a>
-				<h2>Use regular expression in SQL Server</h2>
+				<a id="also_bulk_actions" href="#"></a>
+				<h2>Also Bulk Actions</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="feature-tagline">Use Regex <span class="text-bold-red">flexibility</span> to overcome “LIKE” and “PATHINDEX” limitations.</p>
-						<ul>
-							<li>IsMatch</li>
-							<li>Match</li>
-							<li>Matches</li>
-							<li>Replace</li>
-							<li>Split</li>
-						</ul>					
+						<p class="feature-tagline">Also Bulk Actions allow to perform bulk action with a lambda expression using entities from the last Bulk[Action] or ThenBulk[Action] used.</p>
 					</div>
 					<div class="col-lg-7">
 {% highlight sql %}
-DECLARE @customer TABLE ( Email VARCHAR(255) )
-
-INSERT  INTO @customer
-VALUES  ( 'info@zzzprojects.com' ),
-        ( 'invalid.com' ),
-        ( 'sales@zzzprojects.com' )
-
-DECLARE @valid_email SQLNET = SQLNET::New('Regex.IsMatch(email, 
-@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")')
-
--- SELECT 'invalid.com'
-SELECT * FROM @customer WHERE @valid_email.ValueString('email', Email).EvalBit() = 0
-{% endhighlight %}	
+connection.BulkInsert(orders)
+          .AlsoInsert(order => order.Items)
+          .AlsoInsert(order => order.Invoice)
+          .AlsoInsert(order => order.Invoice.Items);
+{% endhighlight %}
 					</div>
-				</div>	
+				</div>
 
 				<hr class="m-y-md" />
 				
-				<!-- Replace xp_cmdshell with restrictive alternative !-->
-				<a id="repalce-xp-cmdshell-with-restrictive-alternative" href="#"></a>
-				<h2>Replace xp_cmdshell with restrictive alternative</h2>
+				<a id="then_bulk_actions" href="#"></a>
+				<h2>Then Bulk Actions</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="feature-tagline">Avoid enabling xp_cmdshell and compromising your SQL Server and use instead a more <span class="text-bold-red">restrictive</span> solution.</p>
-						<ul>
-							<li>Impersonate Context</li>
-							<li>Improve maintainability</li>
-							<li>Improve readability</li>
-							<li>Improve security</li>
-						</ul>						
+						<p class="feature-tagline">Then Bulk Actions is similar to Also Bulk Actions but modify entities used for the next bulk action using a lambda expression.</p>
 					</div>
 					<div class="col-lg-7">
 {% highlight sql %}
--- REQUIRE EXTERNAL_ACCESS permission
-DECLARE @sqlnet SQLNET = SQLNET::New('
-string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-var dir = new DirectoryInfo(path);
-return dir.GetFiles("*.*")
-          .Select(x => new { x.FullName, FileContent = File.ReadAllText(x.FullName) })
-          .OrderBy(x => x.FullName)')
-          .Impersonate()
-
--- SELECT FullName, FileContext FROM DesktopFiles ORDER BY Fullname
-EXEC dbo.SQLNET_EvalResultSet @sqlnet
-{% endhighlight %}	
+connection.BulkInsert(orders)
+          .AlsoInsert(order => order.Items)
+          .ThenInsert(order => order.Invoice)
+          .ThenInsert(invoice => invoice.Items);
+{% endhighlight %}
 					</div>
-				</div>	
+				</div>
+
+				<hr class="m-y-md" />
+
+				<a id="include_actions" href="#"></a>
+				<h2>Include Actions</h2>
+				<div class="row">
+					<div class="col-lg-5">
+						<p class="feature-tagline">The Dapper Plus Include method allow resolving issues with multiple "ThenBulk[Action]" method.</p>
+					</div>
+					<div class="col-lg-7">
+{% highlight sql %}
+connection.BulkInsert(orders)
+          .Include(x => x.ThenInsert(order => order.Items)
+                         .ThenInsert(orderItem => orderItem.Metas))
+          .Include(x => x.ThenInsert(order => order.Invoice)
+                         .ThenInsert(Invoice => invoice.Items)); 
+{% endhighlight %}
+					</div>
+				</div>			
 			</div>
 		</div>
 		
