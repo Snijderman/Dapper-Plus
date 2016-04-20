@@ -61,7 +61,7 @@ layout: post
 					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-block card-code">
-{% highlight sql %}
+{% highlight csharp %}
 // CONFIGURE & MAP entity
 DapperPlusManager.Entity<Order>()
                  .Table("Orders")
@@ -168,7 +168,7 @@ connection.BulkInsert(orders)
 						<p class="feature-tagline">Dapper Plus Mapper allow to map the conceptual model (Entity) with the storage model (Database) and configure options to perform Bulk Actions.</p>
 					</div>
 					<div class="col-lg-7">
-{% highlight sql %}
+{% highlight csharp %}
 DapperPlusManager.Entity<Order>().Table("Orders")
                                  .Identity(x => x.ID)
                                  .BatchSize(200);
@@ -185,7 +185,7 @@ DapperPlusManager.Entity<Order>().Table("Orders")
 						<p class="feature-tagline">Bulk Actions allow to perform a bulk insert, update, delete or merge and include related child items.</p>
 					</div>
 					<div class="col-lg-7">
-{% highlight sql %}
+{% highlight csharp %}
 connection.BulkInsert(orders, order => order.Items)
           .BulkInsert(invoices, invoice => invoice.Items)
           .BulkMerge(shippingAddresses);
@@ -202,7 +202,7 @@ connection.BulkInsert(orders, order => order.Items)
 						<p class="feature-tagline">Also Bulk Actions allow to perform bulk action with a lambda expression using entities from the last Bulk[Action] or ThenBulk[Action] used.</p>
 					</div>
 					<div class="col-lg-7">
-{% highlight sql %}
+{% highlight csharp %}
 connection.BulkInsert(orders)
           .AlsoInsert(order => order.Items)
           .AlsoInsert(order => order.Invoice)
@@ -220,7 +220,7 @@ connection.BulkInsert(orders)
 						<p class="feature-tagline">Then Bulk Actions is similar to Also Bulk Actions but modify entities used for the next bulk action using a lambda expression.</p>
 					</div>
 					<div class="col-lg-7">
-{% highlight sql %}
+{% highlight csharp %}
 connection.BulkInsert(orders)
           .AlsoInsert(order => order.Items)
           .ThenInsert(order => order.Invoice)
@@ -238,7 +238,7 @@ connection.BulkInsert(orders)
 						<p class="feature-tagline">The Dapper Plus Include method allow resolving issues with multiple "ThenBulk[Action]" method.</p>
 					</div>
 					<div class="col-lg-7">
-{% highlight sql %}
+{% highlight csharp %}
 connection.BulkInsert(orders)
           .Include(x => x.ThenInsert(order => order.Items)
                          .ThenInsert(orderItem => orderItem.Metas))
