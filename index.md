@@ -10,9 +10,9 @@ layout: post
 		<meta name="msvalidate.01" content="89359D9C492A475C0061398008D105FB" />
 		
 		<!-- seo !-->
-		<meta name="description" content="Dramatically improve query performance and overcome SQL limitations with Eval Function">
-		<meta name="keywords" content="Eval, Evaluate, Compile, Execute, Expression, Dynamic, Runtime, .NET, dotnet, C#, CSharp, VB, Stored Procedure, Procedure, Function, Trigger, SQL">
-		<title>SQL Eval Function | Improve SQL Server query performance and dynamically evaluate expression using C# syntax. | Fast SQL Arithmetic, Math and Regular Expression Evaluator.</title>
+		<meta name="description" content="High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET">
+		<meta name="keywords" content="Dapper BulkInsert BulkUpdate BulkDelete BulkMerge Insert Update Delete Merge SQLServer SQLAzure SQLCompact MySQL SQLite .NET ADO.NET ASP.NET C# CSharp MVC MMVC VB.NET">
+		<title>Dapper Plus - High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET</title>
 		
 		<!-- icon/css !-->
 		<link rel="icon" type="image/png" href="http://entityframework-plus.net/images/logo.png">
@@ -46,12 +46,14 @@ layout: post
 							<div class="card-block">
 								<h3 class="card-title">Dapper-Plus</h3>
 								<hr class="m-y-md" />
-								<h1>Dramatically Improve Query Performance and Overcome SQL limitations with Eval Function</h1>
+								<h1>High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET</h1>
 								<hr class="m-y-md" />
 								<div class="lead">
-									<a href="https://github.com/zzzprojects/Eval-SQL.NET/releases" target="_blank" class="btn btn-success btn-lg btn-left" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
-									<a href="https://github.com/zzzprojects/Eval-SQL.NET" target="_blank" class="btn btn-primary btn-lg btn-right" role="button" onclick="ga('send', 'event', { eventAction: 'github'});"><span><i class="fa fa-github fa-2x"></i>&nbsp;<span>GitHub</span></span></a>
-									<p class="text-muted">* FREE Version limited to 50 characters</p>						
+									<a href="https://www.nuget.org/packages/Z.Dapper.Plus/" target="_blank" class="btn btn-success btn-lg btn-left" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
+									<br />
+									<a href="https://www.nuget.org/packages/Z.Dapper.Plus/" target="_blank" onclick="ga('send', 'event', { eventAction: 'download'});"><img src="http://entityframework-plus.net/images/nuget/dapper-plus-v.svg" alt="download" /></a>
+									<a href="https://www.nuget.org/packages/Z.Dapper.Plus/" target="_blank" onclick="ga('send', 'event', { eventAction: 'download'});"><img src="http://entityframework-plus.net/images/nuget/dapper-plus-d.svg" alt="" /></a>			
+									<div class="text-muted">* PRO Version unlocked for the current month</div>
 								</div>
 							</div>
 						</div>
@@ -299,10 +301,10 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 							<div class="card-block">
 								<h4 class="card-title">Documentation</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/Eval-SQL.NET/wiki" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});"><i class="fa fa-folder-open fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Dapper-Plus/wiki" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});"><i class="fa fa-folder-open fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Consult our complete documentation to help you getting started.</p>
-								<a href="https://github.com/zzzprojects/Eval-SQL.NET/wiki" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});">Documentation</a>
+								<a href="https://github.com/zzzprojects/Dapper-Plus/wiki" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});">Documentation</a>
 							</div>
 						</div>
 					</div>
@@ -312,10 +314,10 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 							<div class="card-block">
 								<h4 class="card-title">Forum</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/Eval-SQL.NET/issues" target="_blank" onclick="ga('send', 'event', { eventAction: 'forum'});"><i class="fa fa-weixin fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Dapper-Plus/issues" target="_blank" onclick="ga('send', 'event', { eventAction: 'forum'});"><i class="fa fa-weixin fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Visit the forum to propose new features or to discuss about the library.</p>
-								<a href="https://github.com/zzzprojects/Eval-SQL.NET/issues" target="_blank" onclick="ga('send', 'event', { eventAction: 'forum'});">Forum</a>
+								<a href="https://github.com/zzzprojects/Dapper-Plus/issues" target="_blank" onclick="ga('send', 'event', { eventAction: 'forum'});">Forum</a>
 							</div>
 						</div>
 					</div>
@@ -325,10 +327,10 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 							<div class="card-block">
 								<h4 class="card-title">Open Source</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/Eval-SQL.NET" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});"><i class="fa fa-github fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Dapper-Plus" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});"><i class="fa fa-github fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Access the source of the library you're using to understand better its logic.</p>
-								<a href="https://github.com/zzzprojects/Eval-SQL.NET" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});">GitHub</a>
+								<a href="https://github.com/zzzprojects/Dapper-Plus" target="_blank" onclick="ga('send', 'event', { eventAction: 'github'});">GitHub</a>
 							</div>
 						</div>
 					</div>
@@ -344,40 +346,64 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 					<div class="col-lg-6">
 						<h2>Pricing</h2>
 						<hr class="m-y-md" />
-						<p class="pricing-tagline">Eval SQL.NET is a safe, flexible and scalable solution to perform all dynamic operations.</p>
-						<p class="pricing-tagline">Change "Mission Impossible" code to easy task and reduce your development cost and time.</p>
+						<p class="pricing-tagline">Join thousands of projects already using bulk operations  and make <span class="text-bold-red">YOUR</span> customers happy.</p>
 						<ul>
-							<li>Improve <span class="text-bold-red">performance</span> over UDF & TVF</li>
-							<li>Increase <span class="text-bold-red">maintainability</span> over complex SQL</li>
-							<li>Increase <span class="text-bold-red">readability</span> over complex SQL</li>
+							<li>Improve applications responsivity</li>
+							<li>Minimize time your customers wait</li>
+							<li>Maximize time your customers work</li>
 						</ul>
-						<p class="pricing-tagline">SQL developer are waited so long to get an Eval function, it's now possible and easy to perform all dynamic operations.</p>
+						<p class="pricing-tagline">"Time Is Money" and your customers expect applications to respond as quickly as possible.</p>						
+						<p class="pricing-tagline">"B.U.L.K" four letters that will dramatically changes your applications performance forever.</p>						
 						<hr class="m-y-md" />
-						<p>Every month, a <a href="https://github.com/zzzprojects/Eval-SQL.NET/releases" target="_blank" onclick="ga('send', 'event', { eventAction: 'download'});">FREE trial</a> of the PRO version is available to let you evaluate all its features without limitations.</p>						
+						<p>Every month, a <a href="https://www.nuget.org/packages/Z.Dapper.Plus/" target="_blank" onclick="ga('send', 'event', { eventAction: 'download'});">FREE trial</a> of the PRO version is available to let you evaluate all its features without limitations.</p>
 					</div>
 					<div class="col-lg-6">
 						<table class="table table-hover table-bordered">
 							<thead class="thead-inverse">
 								<tr>
-									<th></th>
-									<th>FREE</th>
+									<th>Features</th>
 									<th>PRO</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<th>Maximum Characters</th>
-									<td>50</td>
-									<td>Unlimited</td>
+									<th>Bulk Insert</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Update</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Delete</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Merge</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Action Async</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Also Action</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Then Action</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
 									<th>Commercial License</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Royalty-Free</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
 									<th>Support & Upgrades (1 year)</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 							</tbody>
@@ -385,16 +411,23 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 						
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return purchase_validate()">
 							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="H8RME3A5PQ5V6">
 							<input type="hidden" name="currency_code" value="USD">
 							<fieldset class="form-group">
 								<input type="hidden" name="on0" value="Seats">
-								<select name="os0" class="form-control">
-									<option value="1 seat">Eval SQL.NET $599 (1 seat)</option>
-									<option value="2-4 seats" selected>Eval SQL.NET $799 (2-4 seats)</option>
-									<option value="5-9 seats">Eval SQL.NET $999 (5-9 seats)</option>
-									<option value="10-14 seats">Eval SQL.NET $1199 (10-14 seats)</option>
-									<option value="15-19 seats">Eval SQL.NET $1399 (15-19 seats)</option>
+								<select id="provider_type" name="hosted_button_id" class="form-control" onchange="selectProduct()">
+									<option value="TJB3SWSLJEC7C">SQL Server/ Azure Provider</option>
+									<option value="GV579KMMBNEAU">SQL Compact Provider</option>
+									<option value="LGP7STYXSNW7S">SQLite Provider</option>
+									<option value="76295G8T6N8EN">MySQL Provider</option>
+									<option value="VXEBFHKXL56NE">ALL Providers</option>
+								</select> 
+								<br />
+								<select id="product_option" name="os0" class="form-control">
+									<option id="seat1" value="1 seat">Bulk Operations $599 (1 seat)</option>
+									<option id="seat2_4" value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
+									<option id="seat5_9" value="5-9 seats">Bulk Operations $999 (5-9 seats)</option>
+									<option id="seat10_14" value="10-14 seats">Bulk Operations $1199 (10-14 seats)</option>
+									<option id="seat15_19" value="15-19 seats">Bulk Operations $1399 (15-19 seats)</option>
 								</select> 
 							</fieldset>
 							<div class="checkbox">
@@ -403,8 +436,9 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 								</label>
 							</div>
 							<button type="submit" class="btn btn-success btn-lg"><span><i class="fa fa-shopping-cart"></i>&nbsp;<span>BUY NOW</span></span></button>
-							<div><br />* Contact us for invoice or payment method alternative.</div>
-						</form>	
+							<br />
+							<div>* Contact us for invoice or payment method alternative.</div>
+						</form>				
 					</div>
 				</div>
 			</div>
@@ -492,7 +526,7 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-55584370-4', 'auto');
+	  ga('create', 'UA-55584370-9', 'auto');
 	  ga('send', 'pageview');
 	  
 	  function purchase_validate() {
@@ -503,6 +537,25 @@ EXEC dbo.SQLNET_EvalResultSet @sqlnet
 		$("#error_validation").modal('show')
 		return false;
 	  }
+	  
+	  function selectProduct() {
+		if($("#provider_type").val() == "VXEBFHKXL56NE") {
+			$("#seat1").html("Bulk Operations $799 (1 seat)");
+			$("#seat2_4").html("Bulk Operations $999 (2-4 seats)");
+			$("#seat5_9").html("Bulk Operations $1199 (5-9 seats)");
+			$("#seat10_14").html("Bulk Operations $1399 (10-14 seats)");
+			$("#seat15_19").html("Bulk Operations $1599 (15-19 seats)");
+		}
+		else {
+			$("#seat1").html("Bulk Operations $599 (1 seat)");
+			$("#seat2_4").html("Bulk Operations $799 (2-4 seats)");
+			$("#seat5_9").html("Bulk Operations $999 (5-9 seats)");
+			$("#seat10_14").html("Bulk Operations $1199 (10-14 seats)");
+			$("#seat15_19").html("Bulk Operations $1399 (15-19 seats)");
+		}
+	  }
+	  
+	  selectProduct();
 	</script>
 	</body>
 </html>
