@@ -11,8 +11,8 @@ layout: post
 		
 		<!-- seo !-->
 		<meta name="description" content="High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET">
-		<meta name="keywords" content="Dapper BulkInsert BulkUpdate BulkDelete BulkMerge Insert Update Delete Merge SQLServer SQLAzure SQLCompact MySQL SQLite .NET ADO.NET ASP.NET C# CSharp MVC MMVC VB.NET">
-		<title>Dapper Plus - High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET</title>
+		<meta name="keywords" content="Dapper, BulkInsert, BulkUpdate, BulkDelete, BulkMerge, Insert, Update, Delete, Merge, SQLServer, SQLAzure, SQLCompact, MySQL, SQLite, .NET, ADO.NET, ASP.NET, C#, CSharp, MVC, MMVC, VB.NET">
+		<title>Dapper Bulk Operation Extensions | High-Efficient Bulk Actions (Insert, Update, Delete, and Merge) for .NET supporting SQL Server, SQL Azure, SQL Compact, MySQL, and SQLite.</title>
 		
 		<!-- icon/css !-->
 		<link rel="icon" type="image/png" href="http://entityframework-plus.net/images/logo.png">
@@ -101,8 +101,8 @@ layout: post
 						<!-- navbar-bar-header !-->
 						<ul class="nav navbar-nav navbar-nav-header">
 							<li class="nav-item">
-								<h1>Dapper Plus</h3>
-								<small>Chaining Bulk Actions</small>
+								<h1>Dapper Plus
+								<small>Bulk Operations Extensions for Dapper</small>
 								</h1>
 							</li>
 						</ul>
@@ -189,7 +189,7 @@ layout: post
 						<div class="card">
 							<div class="card-block">
 								<hr class="m-y-md" />
-								<h2>Dapper Extensions for Bulk Insert, Update, Delete, and Merge</h2>
+								<h2>Extend Dapper with IDbConnection Extensions Bulk Insert, Update, Delete, and Merge</h2>
 								<hr class="m-y-md" />
 								<div class="lead">
 									<a href="https://www.nuget.org/packages/Z.Dapper.Plus/" target="_blank" class="btn btn-success btn-lg btn-left" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
