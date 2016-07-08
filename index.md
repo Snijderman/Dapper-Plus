@@ -396,7 +396,7 @@ connection.BulkInsert(orders)
 				</div>
 				
 				<!-- more-feature !-->
-				<p class="more-feature"><a href="https://github.com/zzzprojects/EntityFramework-Extensions/wiki" target="_blank" class="btn btn-primary btn-lg" role="button"><span><i class="fa fa-book"></i>&nbsp;<span>View More Features</span></span></a></p>
+				<p class="more-feature"><a href="https://github.com/zzzprojects/Dapper-Plus/wiki" target="_blank" class="btn btn-primary btn-lg" role="button"><span><i class="fa fa-book"></i>&nbsp;<span>View More Features</span></span></a></p>
 				
 			</div>
 		</div>
