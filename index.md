@@ -666,18 +666,18 @@ connection.BulkInsert(orders)
 	  
 	  function selectProduct() {
 		if($("#provider_type").val() == "VXEBFHKXL56NE") {
-			$("#seat1").html("Dapper Plus $799 (1 developper seat)");
-			$("#seat2_4").html("Dapper Plus $999 (2-4 developper seats)");
-			$("#seat5_9").html("Dapper Plus $1199 (5-9 developper seats)");
-			$("#seat10_14").html("Dapper Plus $1399 (10-14 developper seats)");
-			$("#seat15_19").html("Dapper Plus $1599 (15-19 developper seats)");
+			$("#seat1").html("Dapper Plus $799 (1 developer seat)");
+			$("#seat2_4").html("Dapper Plus $999 (2-4 developer seats)");
+			$("#seat5_9").html("Dapper Plus $1199 (5-9 developer seats)");
+			$("#seat10_14").html("Dapper Plus $1399 (10-14 developer seats)");
+			$("#seat15_19").html("Dapper Plus $1599 (15-19 developer seats)");
 		}
 		else {
-			$("#seat1").html("Dapper Plus $599 (1 developper seat)");
-			$("#seat2_4").html("Dapper Plus $799 (2-4 developper seats)");
-			$("#seat5_9").html("Dapper Plus $999 (5-9 developper seats)");
-			$("#seat10_14").html("Dapper Plus $1199 (10-14 developper seats)");
-			$("#seat15_19").html("Dapper Plus $1399 (15-19 developper seats)");
+			$("#seat1").html("Dapper Plus $599 (1 developer seat)");
+			$("#seat2_4").html("Dapper Plus $799 (2-4 developer seats)");
+			$("#seat5_9").html("Dapper Plus $999 (5-9 developer seats)");
+			$("#seat10_14").html("Dapper Plus $1199 (10-14 developer seats)");
+			$("#seat15_19").html("Dapper Plus $1399 (15-19 developer seats)");
 		}
 	  }
 	  
