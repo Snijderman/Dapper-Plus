@@ -542,9 +542,11 @@ connection.BulkInsert(orders)
 								<input type="hidden" name="on0" value="Seats">
 								<select id="provider_type" name="hosted_button_id" class="form-control" onchange="selectProduct()">
 									<option value="TJB3SWSLJEC7C">SQL Server/ Azure Provider</option>
+									<option value="UCACT78NAMNLJ">Oracle Provider</option>
+									<option value="76295G8T6N8EN">MySQL Provider</option>
+									<option value="ASN8KBSAGR2DJ">PostgreSQL</option>
 									<option value="GV579KMMBNEAU">SQL Compact Provider</option>
 									<option value="LGP7STYXSNW7S">SQLite Provider</option>
-									<option value="76295G8T6N8EN">MySQL Provider</option>
 									<option value="VXEBFHKXL56NE">ALL Providers</option>
 								</select> 
 								<br />
